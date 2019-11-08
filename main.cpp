@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
     // rect foscusable maken
     player -> setFlag(QGraphicsItem::ItemIsFocusable);
-    player ->setFocus();
+    player -> setFocus();
 
     // Vieuw toevoegen
 
