@@ -7,11 +7,13 @@
 #include <QTimer>
 #include <QApplication>
 
+
 class Game : public QApplication{
 
 public:
     Game(int &argc, char **argv);
     ~Game();
+private:
     QGraphicsScene * scene ;
     MyRect *player ;
     QGraphicsView *view;

@@ -4,6 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QObject>
 
+
 class Bullet : public QObject, public  QGraphicsRectItem
 {
 Q_OBJECT
@@ -12,6 +13,7 @@ public:
     Bullet();
     QTimer * timer;
     ~Bullet();
+
 public slots: // kan aan een signaal gekoppeld worden
     void move();
 };

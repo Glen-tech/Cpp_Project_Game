@@ -3,12 +3,15 @@
 
 #include <QGraphicsRectItem>
 #include <QObject>
-
+#include <bullet.h>
+#include <enemy.h>
 
 class MyRect :public QObject,  public QGraphicsRectItem{
     Q_OBJECT
 public:
-    void keyPressEvent(QKeyEvent *event);
+    MyRect(QKeyEvent *event);
+    Bullet *bullet;
+    Enemy *enemy;
 public slots:
     void spawn();
 };
