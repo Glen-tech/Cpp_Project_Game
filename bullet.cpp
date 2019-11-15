@@ -9,10 +9,15 @@ Bullet:: Bullet(): QObject (),QGraphicsRectItem ()
 {
     setRect(40,0,10,10);
     // connect
-    QTimer * timer = new QTimer();
+    timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
 
     timer -> start(50);
+}
+
+Bullet::~Bullet()
+{
+    delete timer;
 }
 
 void Bullet::move()
