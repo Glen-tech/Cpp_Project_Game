@@ -1,20 +1,25 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <QGraphicsView>
-#include <QWidget>
 #include <QGraphicsScene>
-#include "Player.h"
-#include "Score.h"
-#include "Health.h"
-class Game: public QGraphicsView{
+#include <myrect.h>
+#include <QGraphicsView>
+#include <QTimer>
+#include <QApplication>
+
+
+class Game : public QApplication{
+
 public:
-    Game(QWidget * parent=0);
-
-    QGraphicsScene * scene;
-    Player * player;
-    Score * score;
-    Health * health;
-
+    Game(int &argc, char **argv);
+    ~Game();
+private:
+    QGraphicsScene * scene ;
+    QRect *player ;
+    QGraphicsView *view;
+    QTimer *timer;
 };
+
+
+
 #endif // GAME_H

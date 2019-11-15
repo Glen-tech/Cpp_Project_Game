@@ -1,13 +1,22 @@
 #include <myrect.h>
 #include <QKeyEvent>
 #include <QGraphicsScene> // maken kogel
-#include <bullet.h>
-#include <enemy.h>
-#include <QDebug>
+
+MyRect::MyRect()
+{
+    bullet = nullptr;
+    enemy = nullptr;
+}
+
+MyRect::~MyRect()
+{
+    delete bullet;
+    delete  enemy;
+}
 
 void MyRect::keyPressEvent(QKeyEvent *event)
 {
-    if(event -> key() == Qt :: Key_Left) // #include QKeyEvent
+    if(event -> key() == Qt :: Key_Left)
     {
         if(pos().x() > 0) // als x groter is dan 0 , speler mag bewegen , anders niet
         {
@@ -32,18 +41,17 @@ void MyRect::keyPressEvent(QKeyEvent *event)
         {
             setPos(x(),y()+10);
         }
-        //}kan nu niet meer op en neer gaan
 
         else if(event -> key() == Qt :: Key_Space)
         {
-            Bullet *bullet = new Bullet();
+            bullet = new Bullet();
             bullet -> setPos(x(),y()+10);
             scene() -> addItem(bullet);
-        }   
+        }
 }
 
 void MyRect::spawn() // vijand maken
 {
-    Enemy *enemy = new Enemy();
-    scene() -> addItem(enemy);
+        enemy = new Enemy();
+        scene() -> addItem(enemy);
 }

@@ -1,19 +1,22 @@
 #include <bullet.h>
 #include <QTimer>
-#include <QDebug>
 #include <QGraphicsScene>
 #include <QList>
 #include <enemy.h>
 
 Bullet:: Bullet(): QObject (),QGraphicsRectItem ()
 {
-    setRect(0,0,10,50);
+    setRect(40,0,10,10);
     // connect
-    QTimer * timer = new QTimer();
+    timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
 
     timer -> start(50);
+}
 
+Bullet::~Bullet()
+{
+    delete timer;
 }
 
 void Bullet::move()
@@ -37,7 +40,6 @@ void Bullet::move()
     {
         scene()-> removeItem(this);
         delete this;//free memory
-        qDebug() << "Kogel is verwijderd";
     }
 
 }
