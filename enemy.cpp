@@ -1,7 +1,6 @@
 #include "enemy.h"
 #include <QTimer>
 #include <QGraphicsScene>
-#include <QDebug>
 #include <stdlib.h>//rand()
 
 Enemy:: Enemy(): QObject (),QGraphicsRectItem ()
