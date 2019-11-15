@@ -2,7 +2,6 @@
 #define ENEMY_H
 #include <QGraphicsRectItem>
 #include <QObject>
-#include <game.h>
 
 class Enemy : public QObject, public  QGraphicsRectItem
 {

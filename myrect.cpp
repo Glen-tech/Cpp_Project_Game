@@ -1,9 +1,20 @@
 #include <myrect.h>
 #include <QKeyEvent>
 #include <QGraphicsScene> // maken kogel
-#include <QDebug>
 
-MyRect::MyRect(QKeyEvent *event)
+MyRect::MyRect()
+{
+    bullet = nullptr;
+    enemy = nullptr;
+}
+
+MyRect::~MyRect()
+{
+    delete bullet;
+    delete  enemy;
+}
+
+void MyRect::keyPressEvent(QKeyEvent *event)
 {
     if(event -> key() == Qt :: Key_Left)
     {
@@ -30,7 +41,6 @@ MyRect::MyRect(QKeyEvent *event)
         {
             setPos(x(),y()+10);
         }
-        //}kan nu niet meer op en neer gaan
 
         else if(event -> key() == Qt :: Key_Space)
         {

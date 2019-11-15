@@ -9,7 +9,9 @@
 class MyRect :public QObject,  public QGraphicsRectItem{
     Q_OBJECT
 public:
-    MyRect(QKeyEvent *event);
+    MyRect();
+    ~MyRect();
+    void keyPressEvent(QKeyEvent *event);
     Bullet *bullet;
     Enemy *enemy;
 public slots:

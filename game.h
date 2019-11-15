@@ -15,7 +15,7 @@ public:
     ~Game();
 private:
     QGraphicsScene * scene ;
-    MyRect *player ;
+    QRect *player ;
     QGraphicsView *view;
     QTimer *timer;
 };

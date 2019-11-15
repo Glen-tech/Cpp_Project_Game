@@ -1,6 +1,5 @@
 #include <bullet.h>
 #include <QTimer>
-#include <QDebug>
 #include <QGraphicsScene>
 #include <QList>
 #include <enemy.h>
@@ -41,7 +40,6 @@ void Bullet::move()
     {
         scene()-> removeItem(this);
         delete this;//free memory
-        qDebug() << "Kogel is verwijderd";
     }
 
 }
