@@ -4,6 +4,7 @@
 #include <QList>
 #include <enemy.h>
 
+
 Bullet:: Bullet(): QObject (),QGraphicsRectItem ()
 {
     setRect(40,0,10,10);
@@ -21,12 +22,14 @@ Bullet::~Bullet()
 
 void Bullet::move()
 {
+   Score test;
     // als de kogel in contact komt met de vijand , vernietig allebij
     QList < QGraphicsItem *> colliding_items  = collidingItems();
     for(int i = 0 , n = colliding_items.size() ; i < n ; i++)
     {
         if(typeid(*(colliding_items[i])) == typeid(Enemy))
         {
+            test.increase();
             scene()->removeItem(colliding_items[i]);
             scene()-> removeItem(this);
             delete colliding_items[i];

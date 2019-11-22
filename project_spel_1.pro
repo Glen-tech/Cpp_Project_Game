@@ -29,13 +29,15 @@ SOURCES += \
         enemy.cpp \
         game.cpp \
         main.cpp \
-        myrect.cpp
+        myrect.cpp \
+        score.cpp
 
 HEADERS += \
     bullet.h \
     enemy.h \
     game.h \
-    myrect.h
+    myrect.h \
+    score.h
 
 FORMS +=
 
