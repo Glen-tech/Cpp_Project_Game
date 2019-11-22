@@ -3,6 +3,8 @@
 
 #include <QGraphicsRectItem>
 #include <QObject>
+#include <game.h>
+#include <score.h>
 
 
 class Bullet : public QObject, public  QGraphicsRectItem

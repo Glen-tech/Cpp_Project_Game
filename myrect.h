@@ -14,6 +14,7 @@ public:
     void keyPressEvent(QKeyEvent *event);
     Bullet *bullet;
     Enemy *enemy;
+
 public slots:
     void spawn();
 };
