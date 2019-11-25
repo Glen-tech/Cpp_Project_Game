@@ -29,7 +29,6 @@ void Bullet::move()
     {
         if(typeid(*(colliding_items[i])) == typeid(Enemy))
         {
-            test.increase();
             scene()->removeItem(colliding_items[i]);
             scene()-> removeItem(this);
             delete colliding_items[i];

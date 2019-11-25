@@ -3,9 +3,6 @@
 
 int main(int argc, char *argv[])
 {
-    //QApplication a(argc, argv);
-    Game game(argc, argv);// = new Game();
-    //game -> show();
-
+   Game game(argc, argv);
    return game.exec();
 }

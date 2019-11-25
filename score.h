@@ -5,10 +5,14 @@
 
 class Score : public QGraphicsTextItem{
 public :
-    Score(QGraphicsItem * parent = 0);
-    void increase(); // setter
-    int getScore(); // getter
+    Score();
+
+    inline void increase();
+
+    inline int getScore();  // voor heel kleine functies (met geen variabelen)
+
     QGraphicsItem *parent;
+
 private :
     int score ;
 

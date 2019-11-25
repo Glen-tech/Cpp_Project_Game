@@ -4,14 +4,12 @@
 #include <QTimer> // maken van de vijand
 #include <QObject>
 #include <game.h>
-#include <score.h>
 
 
 Game::Game(int &argc, char **argv) : QApplication (argc, argv)
 {
-
-    Score *score = nullptr;
-    MyRect *player = nullptr ;
+    score = nullptr;
+    player = nullptr ;
     scene = nullptr;
     view = nullptr;
     timer = nullptr;
