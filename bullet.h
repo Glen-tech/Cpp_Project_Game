@@ -3,7 +3,6 @@
 
 #include <QGraphicsRectItem>
 #include <QObject>
-#include <game.h>
 #include <score.h>
 
 
