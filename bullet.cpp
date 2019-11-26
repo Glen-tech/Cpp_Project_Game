@@ -22,7 +22,7 @@ Bullet::~Bullet()
 
 void Bullet::move()
 {
-   Score test;
+   //Score test;
     // als de kogel in contact komt met de vijand , vernietig allebij
     QList < QGraphicsItem *> colliding_items  = collidingItems();
     for(int i = 0 , n = colliding_items.size() ; i < n ; i++)

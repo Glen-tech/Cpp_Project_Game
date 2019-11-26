@@ -3,6 +3,7 @@
 
 #include <QGraphicsRectItem>
 #include <QObject>
+
 #include <bullet.h>
 #include <enemy.h>
 

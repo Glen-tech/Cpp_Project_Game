@@ -2,19 +2,16 @@
 #define ENEMY_H
 #include <QGraphicsRectItem>
 #include <QObject>
+#include "object.h"
 
-class Enemy : public QObject, public  QGraphicsRectItem
+class Enemy : public object
 {
 Q_OBJECT
 
 public:
    Enemy();
    ~Enemy();
-   int random_number;
-   QTimer * timer;
-
-public slots: // kan aan een signaal gekoppeld worden
-    void move();
+   void makeEnemy();
 };
 
 #endif // ENEMY_H
