@@ -3,21 +3,23 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QTimer>
 #include <QApplication>
-#include "score.h"
-#include "myrect.h"
+#include <QGraphicsRectItem>
+#include <QKeyEvent>
+#include "player.h"
+#include "movement.h"
 
 class Game : public QApplication{
 
 public:
     Game(int &argc, char **argv);
     ~Game();
-    Score *score;
-    MyRect *player;
+
     QGraphicsScene * scene ;
     QGraphicsView *view;
-    QTimer *timer;
+    QKeyEvent *movement;
+    player *go ;
+
 
 };
 

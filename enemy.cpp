@@ -3,10 +3,18 @@
 #include <QGraphicsScene>
 #include <stdlib.h>//rand()
 
-Enemy:: Enemy(): QObject (),QGraphicsRectItem ()
+Enemy:: Enemy()
 {
     // random positie top scherm
+}
 
+Enemy::~Enemy()
+{
+    delete timer;
+}
+
+void Enemy::makeEnemy()
+{
     random_number = rand() % 700;
     setPos(random_number, 0);
 
@@ -17,12 +25,7 @@ Enemy:: Enemy(): QObject (),QGraphicsRectItem ()
     timer -> start(50);
 }
 
-Enemy::~Enemy()
-{
-    delete timer;
-}
-
-void Enemy::Enemy::move()
+/*void Enemy::Enemy::move()
 {
     //Vijand gaat naar onder
     setPos(x(),y()+5);
@@ -31,4 +34,4 @@ void Enemy::Enemy::move()
         scene()-> removeItem(this);
         delete this;//free memory
     }
-}
+}*/
