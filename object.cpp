@@ -1,11 +1,5 @@
 #include "object.h"
+#include <QDebug>
 
-object::object()
-{
-    gamer = nullptr ;
-}
 
-object::~object()
-{
-    delete gamer;
-}
+
