@@ -1,8 +1,10 @@
 #include <QApplication>
 #include <game.h>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
-   Game game(argc, argv);
+    Game game(argc, argv);
+
    return game.exec();
 }
