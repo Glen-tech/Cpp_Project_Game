@@ -11,21 +11,15 @@
 
 class object: public QObject, public  QGraphicsRectItem
 {
-public:
-    object(){
-    gamer = nullptr;
-    view = nullptr;
-    timer = nullptr;
-    event = nullptr;
-    playerview= nullptr;
-    }
 
-    QGraphicsRectItem *gamer;
+public:
+
+    object():view(nullptr),timer(nullptr),event(nullptr) {}
+
     QGraphicsView *view;
     QTimer * timer;
     QKeyEvent *event;
     QGraphicsScene *playerview;
-
     virtual void makeobject(QGraphicsScene *playerview) = 0;
     int random_number;
 

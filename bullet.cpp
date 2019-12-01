@@ -6,6 +6,9 @@
 #include <QDebug>
 #include <QKeyEvent>
 
+
+Bullet::Bullet(){Bullet::makeobject(playerview);}
+
 void Bullet::makeobject(QGraphicsScene *playerview)
 {
     setRect(40,0,10,10);

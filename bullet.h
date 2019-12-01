@@ -9,12 +9,11 @@ class Bullet : public object
 Q_OBJECT
 
 public:
-    Bullet(){Bullet::makeobject(playerview);}
+    Bullet();
     void makeobject(QGraphicsScene *playerview);
 
 public slots: // kan aan een signaal gekoppeld worden
     void move();
-
 
 };
 

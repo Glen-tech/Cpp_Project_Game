@@ -14,12 +14,8 @@ class Game : public QApplication{
 
 public:
 
-    Game(int &argc, char **argv):QApplication (argc, argv)
+    Game(int &argc, char **argv):QApplication (argc, argv),scene(nullptr),go(nullptr),goEnemy(nullptr)
     {
-        scene = nullptr;
-        view = nullptr;
-        go = nullptr;
-        goEnemy = nullptr;
         makelevel();
     }
 

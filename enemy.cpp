@@ -4,12 +4,6 @@
 #include <stdlib.h>//rand()
 #include <QDebug>
 
-
-Enemy::Enemy()
-{
-
-}
-
 Enemy::~Enemy()
 {
     delete timer;

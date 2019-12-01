@@ -1,11 +1,6 @@
 #include "movement.h"
 #include <QDebug>
 
-movement::movement()
-{
-
-}
-
 void movement::keyPressEvent(QKeyEvent *event)
 {
     if(event -> key() == Qt :: Key_Left)
