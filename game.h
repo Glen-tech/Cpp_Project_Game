@@ -4,25 +4,18 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QApplication>
-#include <QGraphicsRectItem>
-#include <QKeyEvent>
 #include "player.h"
 #include "movement.h"
-#include "enemy.h"
+
 
 class Game : public QApplication{
 
 public:
 
-    Game(int &argc, char **argv):QApplication (argc, argv)
+    Game(int &argc, char **argv):QApplication (argc, argv),scene(nullptr),go(nullptr),goEnemy(nullptr)
     {
-        scene = nullptr;
-        view = nullptr;
-        go = nullptr;
-        goEnemy = nullptr;
         makelevel();
     }
-
     ~Game();
 
      void makelevel();

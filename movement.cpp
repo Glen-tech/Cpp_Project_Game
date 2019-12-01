@@ -1,11 +1,6 @@
 #include "movement.h"
 #include <QDebug>
 
-movement::movement()
-{
-
-}
-
 void movement::keyPressEvent(QKeyEvent *event)
 {
     if(event -> key() == Qt :: Key_Left)
@@ -25,7 +20,7 @@ void movement::keyPressEvent(QKeyEvent *event)
         }
         else if(event -> key() == Qt :: Key_Space)
         {
-            bullet = new Bullet();
+            bullet = new Bullet(); // aanmaak bullet bij drukken spacebar
             bullet -> setPos(x(),y()+10);
             scene() -> addItem(bullet);
         }
