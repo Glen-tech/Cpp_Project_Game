@@ -1,7 +1,6 @@
 #ifndef MOVEMENT_H
 #define MOVEMENT_H
 
-#include <QGraphicsRectItem>
 #include <QObject>
 #include <QKeyEvent>
 #include "object.h"

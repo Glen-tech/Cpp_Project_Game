@@ -20,7 +20,7 @@ void movement::keyPressEvent(QKeyEvent *event)
         }
         else if(event -> key() == Qt :: Key_Space)
         {
-            bullet = new Bullet();
+            bullet = new Bullet(); // aanmaak bullet bij drukken spacebar
             bullet -> setPos(x(),y()+10);
             scene() -> addItem(bullet);
         }

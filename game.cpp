@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QTimer>
 #include "game.h"
+#include "enemy.h"
 
 Game::~Game()
 {
@@ -14,15 +15,11 @@ Game::~Game()
 
 void Game::makelevel()
 {
-    // maken van een scene
-    scene = new QGraphicsScene() ;// allocatie geheugen
-    // item voor in de scene
+    scene = new QGraphicsScene() ;
     timer = new QTimer;
-
-   view = new QGraphicsView(scene);
-
-   go = new player();
-   goEnemy= new Enemy();
+    view = new QGraphicsView(scene);
+    go = new player();
+    goEnemy= new Enemy();
 
    view -> setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    view -> setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -31,9 +28,11 @@ void Game::makelevel()
    view -> setFixedSize(800,600); // grote venster
    scene -> setSceneRect(0,0,900,900); // grote speelveld
 
-    go->makeobject(scene);
-    goEnemy->makeobject(scene);
-    qDebug() << "Game::Game(int &argc, char **argv) : QApplication (argc, argv)";
-    QObject::connect(timer,SIGNAL(timeout()),goEnemy,SLOT(spawn()));
-    timer -> start(2000);
+    go->makeobject(scene); // doorverwijzing naar player
+    goEnemy->makeobject(scene);//doorverwijzing naar enemy
+
+    QObject::connect(timer,SIGNAL(timeout()),goEnemy,SLOT(spawn()));// timer voor spawn enemy
+    timer -> start(2000);// timer is nu gezet op 2 seconden
+
+     qDebug() << "Game::Game(int &argc, char **argv) : QApplication (argc, argv)"; // zien waar je bent in de code bij compile
 }

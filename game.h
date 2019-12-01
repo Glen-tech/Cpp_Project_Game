@@ -4,11 +4,9 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QApplication>
-#include <QGraphicsRectItem>
-#include <QKeyEvent>
 #include "player.h"
 #include "movement.h"
-#include "enemy.h"
+
 
 class Game : public QApplication{
 
@@ -18,7 +16,6 @@ public:
     {
         makelevel();
     }
-
     ~Game();
 
      void makelevel();

@@ -7,14 +7,17 @@
 #include <QKeyEvent>
 
 
-Bullet::Bullet(){Bullet::makeobject(playerview);}
+Bullet::Bullet()
+{
+    Bullet::makeobject(playerview);// verwijzing makeobject functie
+}
 
 void Bullet::makeobject(QGraphicsScene *playerview)
 {
-    setRect(40,0,10,10);
+    setRect(40,0,10,10); // maken kogel
     timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()));
-    timer -> start(50);
+    connect(timer,SIGNAL(timeout()),this,SLOT(move()));//timer voor bewegen kogel
+    timer -> start(50);//timer is nu gezet op 50 ms
 }
 
 void Bullet::move()
@@ -33,9 +36,9 @@ void Bullet::move()
         }
 
     }
-    setPos(x(),y()-10);
+    setPos(x(),y()-10); // bewegen kogel
 
-    if(pos().y() + rect().height()< 0 )// verwijderen kogel , 0 os volledig links rect().height grote van de kogel
+    if(pos().y() + rect().height()< 0 ) // kogel heeft einde scherm gebreikt
     {
         scene()-> removeItem(this);
         delete this;//free memory
