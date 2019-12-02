@@ -5,14 +5,13 @@
 #include <QGraphicsView>
 #include <QApplication>
 #include "player.h"
-#include "movement.h"
 
 
 class Game : public QApplication{
 
 public:
 
-    Game(int &argc, char **argv):QApplication (argc, argv),scene(nullptr),go(nullptr),goEnemy(nullptr)
+    Game(int &argc, char **argv):QApplication (argc, argv),scene(nullptr),go(nullptr),goEnemy(nullptr) // specific constructor
     {
         makelevel();
     }
@@ -21,10 +20,9 @@ public:
      void makelevel();
      QGraphicsScene * scene ;
      QGraphicsView *view;
-     QKeyEvent *movement;
+     QTimer * timer;
      object *go ;
      object *goEnemy;
-     QTimer * timer;
 
 };
 
