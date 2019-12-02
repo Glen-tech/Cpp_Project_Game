@@ -1,8 +1,7 @@
-#include "enemy.h"
 #include <QTimer>
-#include <QGraphicsScene>
-#include <stdlib.h>//rand()
 #include <QDebug>
+#include <stdlib.h>//rand()
+#include "enemy.h"
 
 Enemy::~Enemy()
 {
@@ -12,15 +11,13 @@ Enemy::~Enemy()
 
 void Enemy::makeobject(QGraphicsScene *playerview)
 {
-   int random_number = rand() % 700;  // randompositie voor de vijand
-   setPos(random_number,0);
    setRect(0,0,100,100);
    playerview->addItem(this); // enemy is nu toegevoegd
    timer = new QTimer;
-   QObject::connect(timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor bewegen vijand
-   timer ->start(50); // timer is nu gezet
-
+   QObject::connect(timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor move enemy
+   timer ->start(60); // timer is nu gezet op 50 ms
    setPos(x(),y()+5);
+
    if(pos().y() > 600) //als x + de vierkant en kleiner dan de breedte van de scherm
    {
         scene()-> removeItem(this);
@@ -35,7 +32,7 @@ void Enemy::move()
     setPos(x(),y()+5); // vijand beweegt naar benenden
     if(pos().y() > 800) //als x + de vierkant en kleiner dan de breedte van de scherm
     {
-         scene()-> removeItem(this);
+         scene()-> removeItem(this); // werkt niet zonder this
          delete this;//free memory
          qDebug() << "removeEnemy";
     }
@@ -44,10 +41,10 @@ void Enemy::move()
 
 }
 
-void Enemy::spawn() // maakt vijanden aan
+void Enemy::spawn() // maakt vijanden aan (niet compleet)
 {
 
-    int random_number = rand() % 700; // nog nakijken , klopt niet met compilen
+    int random_number = rand() % 700;
     setPos(random_number,0);
     setRect(0,0,100,100);
 

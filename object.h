@@ -6,22 +6,20 @@
 #include <QGraphicsView>
 #include <QObject>
 #include <QList>
-#include <QKeyEvent>
-
 
 class object: public QObject, public  QGraphicsRectItem
 {
 
 public:
-
-    object():view(nullptr),timer(nullptr),event(nullptr) {}
+    object():view(nullptr),timer(nullptr),event(nullptr),gamer(nullptr) {} // base class
 
     QGraphicsView *view;
     QTimer * timer;
     QKeyEvent *event;
     QGraphicsScene *playerview;
+    QGraphicsRectItem *gamer;
     virtual void makeobject(QGraphicsScene *playerview) = 0;
-    int random_number;
+    int random_number; // usefull member
 
 };
 

@@ -1,10 +1,11 @@
-#include <bullet.h>
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
-#include <enemy.h>
 #include <QDebug>
-#include <QKeyEvent>
+#include <typeinfo.h>
+
+#include "enemy.h"
+#include "bullet.h"
 
 
 Bullet::Bullet()
@@ -22,13 +23,13 @@ void Bullet::makeobject(QGraphicsScene *playerview)
 
 void Bullet::move()
 {
-    QList < QGraphicsItem *> colliding_items  = collidingItems();
+    QList < QGraphicsItem *> colliding_items  = collidingItems(); // bijhouden pad van de kogel
     for(int i = 0 , n = colliding_items.size() ; i < n ; i++)
     {
-        if(typeid(*(colliding_items[i])) == typeid(Enemy))
+        if(typeid(*(colliding_items[i])) == typeid(Enemy)) // als de pad van de kogel een vijand aanraakt
         {
-            scene()->removeItem(colliding_items[i]);
-            scene()-> removeItem(this);
+            scene()->removeItem(colliding_items[i]); // word de kogel verwijderd
+            scene()-> removeItem(this);//en de vijand
 
             delete colliding_items[i];
             delete this;

@@ -7,10 +7,8 @@
 
 class player :public object{
 
-private:
-     QGraphicsRectItem *gamer;
 public:
-    player():gamer(nullptr){}
+    player(){} //default constructor
     ~player();
     void makeobject(QGraphicsScene *playerview);
 

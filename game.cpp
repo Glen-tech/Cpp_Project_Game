@@ -1,4 +1,3 @@
-#include <QApplication>
 #include <QGraphicsView>
 #include <QDebug>
 #include <QTimer>
@@ -8,6 +7,7 @@
 Game::~Game()
 {
    delete scene;
+   delete timer ;
    delete view ;
    delete go;
    delete goEnemy;
@@ -28,11 +28,11 @@ void Game::makelevel()
    view -> setFixedSize(800,600); // grote venster
    scene -> setSceneRect(0,0,900,900); // grote speelveld
 
-    go->makeobject(scene); // doorverwijzing naar player
-    goEnemy->makeobject(scene);//doorverwijzing naar enemy
+    go->makeobject(scene); // doorverwijzing naar class player
+    goEnemy->makeobject(scene);//doorverwijzing naar class enemy
 
-    QObject::connect(timer,SIGNAL(timeout()),goEnemy,SLOT(spawn()));// timer voor spawn enemy
-    timer -> start(2000);// timer is nu gezet op 2 seconden
+    QObject::connect(timer,SIGNAL(timeout()),goEnemy,SLOT(spawn()));// timer voor spawn enemy in class enemy
+    timer -> start(2000);// timer van spawn enemy gezet op 2 seconden
 
      qDebug() << "Game::Game(int &argc, char **argv) : QApplication (argc, argv)"; // zien waar je bent in de code bij compile
 }

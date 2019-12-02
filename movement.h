@@ -11,13 +11,12 @@
 class movement: public QObject,  public QGraphicsRectItem{
 
 public:
-    movement():bullet(nullptr){}
+    movement():bullet(nullptr){}//specific constructor
     void keyPressEvent(QKeyEvent *event);
     object *bullet;
 
 public slots:
     void spawn();
-
 
 };
 

@@ -8,7 +8,7 @@ class Enemy : public object
     Q_OBJECT
 
 public:
-    Enemy(){}
+    Enemy(){} // default constructor
    ~Enemy();
 
     void makeobject(QGraphicsScene *playerview);
