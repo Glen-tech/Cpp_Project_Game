@@ -33,7 +33,6 @@ void Bullet::move()
 
             delete colliding_items[i];
             delete this;
-
         }
 
     }

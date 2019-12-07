@@ -3,6 +3,7 @@
 
 #include "object.h"
 
+
 class Enemy : public object
 {
     Q_OBJECT

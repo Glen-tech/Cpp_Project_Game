@@ -15,15 +15,16 @@ Game::~Game()
 
 void Game::makelevel()
 {
-    scene = new QGraphicsScene() ;
-    timer = new QTimer;
-    view = new QGraphicsView(scene);
-    go = new player();
-    goEnemy= new Enemy();
+   scene = new QGraphicsScene() ;
+   timer = new QTimer;
+   view = new QGraphicsView(scene);
+   go = new player();
+   goEnemy= new Enemy();
 
    view -> setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    view -> setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    view -> show();
+
 
    view -> setFixedSize(800,600); // grote venster
    scene -> setSceneRect(0,0,900,900); // grote speelveld

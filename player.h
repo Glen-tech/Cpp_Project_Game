@@ -11,7 +11,6 @@ public:
     player(){} //default constructor
     ~player();
     void makeobject(QGraphicsScene *playerview);
-
 };
 
 #endif // PLAYER_H
