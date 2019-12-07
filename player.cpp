@@ -16,6 +16,7 @@ void player::makeobject(QGraphicsScene *playerview)
     gamer ->setFlag(QGraphicsItem::ItemIsFocusable);
     gamer ->setFocus();
     playerview->addItem(gamer);
+
     qDebug() << "player::makeobject(QGraphicsScene *playerview)";
 }
 

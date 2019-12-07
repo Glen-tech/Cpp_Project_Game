@@ -9,10 +9,8 @@
 
 class object: public QObject, public  QGraphicsRectItem
 {
-
 public:
     object():view(nullptr),timer(nullptr),event(nullptr),gamer(nullptr) {} // base class
-
     QGraphicsView *view;
     QTimer * timer;
     QKeyEvent *event;

@@ -11,9 +11,9 @@ Enemy::~Enemy()
 
 void Enemy::makeobject(QGraphicsScene *playerview)
 {
-   setRect(0,0,100,100);
    playerview->addItem(this); // enemy is nu toegevoegd
    timer = new QTimer;
+
    QObject::connect(timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor move enemy
    timer ->start(60); // timer is nu gezet op 50 ms
    setPos(x(),y()+5);
