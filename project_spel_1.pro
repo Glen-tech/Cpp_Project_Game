@@ -31,7 +31,8 @@ SOURCES += \
         main.cpp \
         movement.cpp \
         object.cpp \
-        player.cpp
+        player.cpp \
+        score.cpp
 
 HEADERS += \
     bullet.h \
@@ -39,7 +40,8 @@ HEADERS += \
     game.h \
     movement.h \
     object.h \
-    player.h
+    player.h \
+    score.h
 
 FORMS +=
 
