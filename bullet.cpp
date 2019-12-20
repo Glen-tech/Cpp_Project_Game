@@ -32,7 +32,7 @@ void Bullet::move()
             scene()-> removeItem(this);//en de vijand
 
             delete colliding_items[i];
-            delete this;
+            this -> deleteLater();
         }
 
     }
@@ -41,7 +41,7 @@ void Bullet::move()
     if(pos().y() + rect().height()< 0 ) // kogel heeft einde scherm gebreikt
     {
         scene()-> removeItem(this);
-        delete this;//free memory
+        this -> deleteLater();
          qDebug() << " Bullet remove";
     }
     qDebug() << " Bullet::move()";

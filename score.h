@@ -8,9 +8,7 @@ public :
     Score();
 
     inline void increase();
-
     inline int getScore();  // voor heel kleine functies (met geen variabelen)
-
     QGraphicsItem *parent;
 
 private :
