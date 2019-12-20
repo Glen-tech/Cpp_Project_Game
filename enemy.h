@@ -11,7 +11,6 @@ class Enemy : public object
 public:
     Enemy(){} // default constructor
    ~Enemy();
-
     void makeobject(QGraphicsScene *playerview);
 
  public slots:
