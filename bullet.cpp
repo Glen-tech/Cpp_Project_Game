@@ -7,12 +7,6 @@
 #include "enemy.h"
 #include "bullet.h"
 
-
-Bullet::Bullet()
-{
-    Bullet::makeobject(playerview);// verwijzing makeobject functie
-}
-
 void Bullet::makeobject(QGraphicsScene *playerview)
 {
     setRect(40,0,10,10); // maken kogel

@@ -1,35 +1,43 @@
 #include <QGraphicsView>
 #include <QDebug>
 #include <QTimer>
+#include <iostream>
 #include "game.h"
-#include "enemy.h"
+
+using namespace std ;
 
 Game::~Game()
 {
-   delete scene;
-   delete timer ;
-   delete view ;
-   delete go;
-   delete goEnemy;
+   delete ofGame.scene;
+   delete ofGame.timer ;
+   delete ofGame.view ;
+   delete ofGame.go;
+   delete ofGame.goEnemy;
 }
 
 void Game::makelevel()
 {
-   scene = new QGraphicsScene() ;
-   timer = new QTimer;
-   view = new QGraphicsView(scene);
-   go = new player();
-   goEnemy= new Enemy();
 
-   view -> setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-   view -> setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-   view -> show();
+   if(ofGame.testGame)
+   {qDebug() << "MakeLevel werkt";}
 
-   view -> setFixedSize(800,600); // grote venster
-   scene -> setSceneRect(0,0,900,900); // grote speelveld
+   ofGame.scene = new QGraphicsScene() ;
+   ofGame.timer = new QTimer;
+   ofGame.view = new QGraphicsView(ofGame.scene);
+   ofGame.go = new player();
+   ofGame.goEnemy= new Enemy();
 
-    go->makeobject(scene); // doorverwijzing naar class player
-    goEnemy->makeobject(scene);//doorverwijzing naar class enemy
+   ofGame.go = &ofGame.player;
+  //ofGame.goEnemy = &ofGame.enemy;
 
-     qDebug() << "Game::Game(int &argc, char **argv) : QApplication (argc, argv)"; // zien waar je bent in de code bij compile
+   ofGame.view -> setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   ofGame.view -> setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   ofGame.view -> show();
+
+   ofGame.view -> setFixedSize(800,600); // grote venster
+   ofGame.scene -> setSceneRect(0,0,900,900); // grote speelveld
+
+   ofGame.go->makeobject(ofGame.scene); // doorverwijzing naar class player
+   ofGame.goEnemy->makeobject(ofGame.scene);//doorverwijzing naar class enemy
+
 }
