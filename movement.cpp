@@ -3,6 +3,8 @@
 
 void movement::keyPressEvent(QKeyEvent *event)
 {
+    testMovement = true ;
+    if(testMovement) {qDebug() << "Movement KeyPressEvent werkt";}
 
     if(event -> key() == Qt :: Key_Left)
     {
@@ -25,7 +27,6 @@ void movement::keyPressEvent(QKeyEvent *event)
                 bullet -> setPos(x(),y()+10);
                 scene() -> addItem(bullet);
         }
-     qDebug() << " movement::keyPressEvent(QKeyEvent *event)";
 }
 
 

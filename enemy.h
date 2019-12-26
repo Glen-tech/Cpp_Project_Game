@@ -9,7 +9,12 @@ class Enemy : public object
     Q_OBJECT
 
 public:
-    Enemy(){} // default constructor
+    Enemy():testMakeobject(0),testMove(0),testSpawn(0){} // default constructor
+
+    bool testMakeobject;
+    bool testMove;
+    bool testSpawn;
+
    ~Enemy();
     void makeobject(QGraphicsScene *playerview);
 

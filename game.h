@@ -12,10 +12,14 @@ class Game : public QApplication{
 public:
 
     Game(int &argc, char **argv):QApplication (argc, argv) // specific constructor
-    {makelevel();}
+    {testGame(true);}
     ~Game();
 
     void makelevel();
+
+    bool testGame(bool testGame = 0)
+    {
+        makelevel();}
 
      struct bloks
      {
@@ -25,8 +29,7 @@ public:
          object *go ;
          object *goEnemy;
          player player;
-         const bool testGame;
-         bloks():scene(nullptr),go(nullptr),goEnemy(nullptr),testGame(true){}
+         bloks():scene(nullptr),go(nullptr),goEnemy(nullptr){}
      };
 
      bloks ofGame;

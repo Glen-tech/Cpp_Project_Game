@@ -11,7 +11,9 @@
 class movement: public QObject,  public QGraphicsRectItem{
 
 public:
-    movement():bullet(nullptr){}//default constructor
+    movement():bullet(nullptr),testMovement(0){}//default constructor
+
+    bool testMovement;
     void keyPressEvent(QKeyEvent *event);
     object *bullet;
 
