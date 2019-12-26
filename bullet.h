@@ -9,8 +9,12 @@ class Bullet : public object
 Q_OBJECT
 
 public:
-    Bullet(){Bullet::makeobject(playerview);}// verwijzing makeobject functie
+    Bullet(){testBullet(true);}// verwijzing makeobject functie
     void makeobject(QGraphicsScene *playerview);
+
+    bool testBullet(bool testBullet = 0)
+    {  if(testBullet){qDebug() << "Bullet werkt";}
+        Bullet::makeobject(playerview);}
 
 public slots: // kan aan een signaal gekoppeld worden
     void move();

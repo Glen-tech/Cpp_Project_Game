@@ -17,10 +17,6 @@ Game::~Game()
 
 void Game::makelevel()
 {
-
-   if(ofGame.testGame)
-   {qDebug() << "MakeLevel werkt";}
-
    ofGame.scene = new QGraphicsScene() ;
    ofGame.timer = new QTimer;
    ofGame.view = new QGraphicsView(ofGame.scene);
