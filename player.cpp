@@ -7,8 +7,8 @@ player::~player()
 
 void player::makeobject(QGraphicsScene *playerview)
 {
-    testPlayer = true ;
-    if(testPlayer){qDebug() << "Player Make Object werkt";}
+    smaller.testPlayer = true ;
+    if(smaller.testPlayer){qDebug() << "Player Make Object werkt";}
 
     gamer = new movement(); // eenmalige aanmaak van de speler
     gamer ->setRect(0,0,100,100); // grote speler
