@@ -17,9 +17,11 @@ public:
 
     void makelevel();
 
-    bool testGame(bool testGame = 0)
-    {
-        makelevel();}
+    bool testGame(bool testGame = 0){
+     if(testGame){qDebug() << "Game werkt";
+     makelevel();
+     }
+    return true ;}
 
      struct bloks
      {
@@ -29,10 +31,12 @@ public:
          object *go ;
          object *goEnemy;
          player player;
+         bool testGame : 1;
          bloks():scene(nullptr),go(nullptr),goEnemy(nullptr){}
      };
 
      bloks ofGame;
+
 
 };
 

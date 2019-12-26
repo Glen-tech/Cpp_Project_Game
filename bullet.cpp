@@ -9,10 +9,12 @@
 
 void Bullet::makeobject(QGraphicsScene *playerview)
 {
+    smaller.BulletMake = true;
     setRect(40,0,10,10); // maken kogel
     timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));//timer voor bewegen kogel
     timer -> start(50);//timer is nu gezet op 50 ms
+    if(smaller.BulletMake) qDebug() << "Bullet makeobject werkt";
 }
 
 void Bullet::move()
@@ -34,9 +36,11 @@ void Bullet::move()
 
     if(pos().y() + rect().height()< 0 ) // kogel heeft einde scherm gebreikt
     {
+        smaller.BulletRemove = true;
         scene()-> removeItem(this);
         this -> deleteLater();
-         qDebug() << " Bullet remove";
+        if(smaller.BulletRemove) qDebug() << "Bullet remove werkt";
     }
-    qDebug() << " Bullet::move()";
+    smaller.BulletMove = true;
+    if(smaller.BulletMove) qDebug() << "Bullet makeobject werkt";
 }

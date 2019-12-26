@@ -10,9 +10,7 @@ Enemy::~Enemy()
 
 void Enemy::makeobject(QGraphicsScene *playerview)
 {
-   testMakeobject= true ;
-   if(testMakeobject) qDebug() << "Enemy make object werkt";
-
+   smaller.testMakeobject= true ;
    smaller.random_number = rand() % 700;
    setPos(smaller.random_number,0);
 
@@ -22,14 +20,15 @@ void Enemy::makeobject(QGraphicsScene *playerview)
 
    QObject::connect(timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor move enemy
    timer ->start(60); // timer is nu gezet op 50 ms
+   if(smaller.testMakeobject) qDebug() << "Enemy make object werkt";
+
+
 }
 
 void Enemy::move()
 {
-    testMove= true ;
-    if(testMove){qDebug() << "Enemy move object werkt";}
-
-    setPos(x(),y()+5); // vijand beweegt naar benenden
+    smaller.testMove= true ;
+   setPos(x(),y()+5); // vijand beweegt naar benenden
     if(pos().y() > 800) //als x + de vierkant en kleiner dan de breedte van de scherm
     {
          scene()-> removeItem(this); // werkt niet zonder this
@@ -37,17 +36,16 @@ void Enemy::move()
          this->deleteLater();//free memory
         ;
     }
-
     timer->start(50); // timer is gezet op 50 ms
+    if(smaller.testMove){qDebug() << "Enemy move object werkt";}
 }
 
 void Enemy::spawn() // maakt vijanden aan (niet compleet)
 {
-    testSpawn= true ;
-    if(testSpawn){qDebug() << "Enemy spawn object werkt";}
-
+    smaller.testSpawn= true ;
     Enemy *enemy = new Enemy();
     scene()-> addItem(this);
+    if(smaller.testSpawn){qDebug() << "Enemy spawn object werkt";}
 }
 
 

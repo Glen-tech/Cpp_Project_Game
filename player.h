@@ -8,8 +8,7 @@
 class player :public object{
 
 public:
-    player():testPlayer(0){} //default constructor
-    bool testPlayer;
+    player(){} //default constructor
     ~player();
     void makeobject(QGraphicsScene *playerview);
 };
