@@ -3,6 +3,7 @@
 
 void movement::keyPressEvent(QKeyEvent *event)
 {
+
     if(event -> key() == Qt :: Key_Left)
     {
             if(pos().x() > 0) // als x groter is dan 0 , speler mag bewegen , anders niet
