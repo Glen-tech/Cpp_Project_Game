@@ -11,9 +11,9 @@ void Bullet::makeobject(QGraphicsScene *playerview)
 {
     smaller.BulletMake = true;
     setRect(40,0,10,10); // maken kogel
-    timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()));//timer voor bewegen kogel
-    timer -> start(50);//timer is nu gezet op 50 ms
+    elements.timer = new QTimer();
+    connect(elements.timer,SIGNAL(timeout()),this,SLOT(move()));//timer voor bewegen kogel
+    elements.timer -> start(50);//timer is nu gezet op 50 ms
     if(smaller.BulletMake) qDebug() << "Bullet makeobject werkt";
 }
 

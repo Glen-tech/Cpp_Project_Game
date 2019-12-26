@@ -15,7 +15,7 @@ public:
     bool testBullet()
     {
         if(smaller.testBullet){qDebug() << "Bullet werkt";}
-        Bullet::makeobject(playerview);
+        Bullet::makeobject(elements.playerview);
         return true;
     }
 

@@ -5,7 +5,7 @@
 
 Enemy::~Enemy()
 {
-    delete timer;
+    delete elements.timer;
 }
 
 void Enemy::makeobject(QGraphicsScene *playerview)
@@ -16,10 +16,10 @@ void Enemy::makeobject(QGraphicsScene *playerview)
 
    setRect(0,0,100,100);
    playerview->addItem(this); // enemy is nu toegevoegd
-   timer = new QTimer;
+   elements.timer = new QTimer;
 
-   QObject::connect(timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor move enemy
-   timer ->start(60); // timer is nu gezet op 50 ms
+   QObject::connect(elements.timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor move enemy
+   elements.timer ->start(60); // timer is nu gezet op 50 ms
    if(smaller.testMakeobject) qDebug() << "Enemy make object werkt";
 
 
@@ -36,7 +36,7 @@ void Enemy::move()
          this->deleteLater();//free memory
         ;
     }
-    timer->start(50); // timer is gezet op 50 ms
+    elements.timer->start(50); // timer is gezet op 50 ms
     if(smaller.testMove){qDebug() << "Enemy move object werkt";}
 }
 
