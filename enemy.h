@@ -13,7 +13,6 @@ public:
    ~Enemy();
     void makeobject(QGraphicsScene *playerview);
 
-
  public slots:
   void move();
   void spawn();

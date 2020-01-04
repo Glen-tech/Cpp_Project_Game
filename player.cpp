@@ -7,8 +7,6 @@ player::~player()
 
 void player::makeobject(QGraphicsScene *playerview)
 {
-    smaller.testPlayer = true ;
-    if(smaller.testPlayer){qDebug() << "Player Make Object werkt";}
 
     elements.gamer = new movement(); // eenmalige aanmaak van de speler
     elements.gamer ->setRect(0,0,100,100); // grote speler
@@ -16,6 +14,9 @@ void player::makeobject(QGraphicsScene *playerview)
     elements.gamer ->setFlag(QGraphicsItem::ItemIsFocusable);
     elements.gamer ->setFocus();
     playerview->addItem(elements.gamer);
+
+    smaller.testPlayer = true ;
+    if(smaller.testPlayer == true ){qDebug() << "Player Make Object werkt";}
 
 }
 

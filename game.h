@@ -23,7 +23,7 @@ public:
      }
     return true ;}
 
-     struct bloks
+     struct starting
      {
          QGraphicsScene * scene ;
          QGraphicsView *view;
@@ -32,10 +32,10 @@ public:
          object *goEnemy;
          player player;
          bool testGame : 1;
-         bloks():scene(nullptr),go(nullptr),goEnemy(nullptr){}
+         starting():scene(nullptr),go(nullptr),goEnemy(nullptr){}
      };
 
-     bloks ofGame;
+     starting ofGame;
 
 
 };
