@@ -25,13 +25,12 @@ public:
             QGraphicsRectItem *gamer;
             construct():view(nullptr),timer(nullptr),event(nullptr),playerview(nullptr),gamer(nullptr){}
         };
-
         construct elements;
 
         struct testingProg
         {
             short random_number:10; // usefull member + max getal is 700 = 10 bits.
-            bool testMakeobject:1;
+            bool testMakeobject:1; // 8 naar 1 bit
             bool testMove:1;
             bool testSpawn:1;
             bool testBullet:1;

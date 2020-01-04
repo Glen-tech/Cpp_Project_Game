@@ -10,7 +10,6 @@ Enemy::~Enemy()
 
 void Enemy::makeobject(QGraphicsScene *playerview)
 {
-   smaller.testMakeobject= true ;
    smaller.random_number = rand() % 700;
    setPos(smaller.random_number,0);
 
@@ -20,14 +19,14 @@ void Enemy::makeobject(QGraphicsScene *playerview)
 
    QObject::connect(elements.timer,SIGNAL(timeout()),this,SLOT(move()));  // timer voor move enemy
    elements.timer ->start(60); // timer is nu gezet op 50 ms
-   if(smaller.testMakeobject) qDebug() << "Enemy make object werkt";
+   smaller.testMakeobject= true ;
+   if(smaller.testMakeobject == true) qDebug() << "Enemy make object werkt";
 
 
 }
 
 void Enemy::move()
 {
-    smaller.testMove= true ;
    setPos(x(),y()+5); // vijand beweegt naar benenden
     if(pos().y() > 800) //als x + de vierkant en kleiner dan de breedte van de scherm
     {
@@ -37,15 +36,16 @@ void Enemy::move()
         ;
     }
     elements.timer->start(50); // timer is gezet op 50 ms
-    if(smaller.testMove){qDebug() << "Enemy move object werkt";}
+    smaller.testMove= true ;
+    if(smaller.testMove == true){qDebug() << "Enemy move object werkt";}
 }
 
 void Enemy::spawn() // maakt vijanden aan (niet compleet)
 {
-    smaller.testSpawn= true ;
     Enemy *enemy = new Enemy();
     scene()-> addItem(this);
-    if(smaller.testSpawn){qDebug() << "Enemy spawn object werkt";}
+    smaller.testSpawn= true ;
+    if(smaller.testSpawn == true){qDebug() << "Enemy spawn object werkt";}
 }
 
 

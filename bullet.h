@@ -19,9 +19,6 @@ public:
         return true;
     }
 
-
-
-
 public slots: // kan aan een signaal gekoppeld worden
     void move();
 
