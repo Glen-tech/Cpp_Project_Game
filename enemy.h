@@ -15,7 +15,7 @@ public:
 
  public slots:
   void move();
-  void spawn();
+
 };
 
 #endif // ENEMY_H
