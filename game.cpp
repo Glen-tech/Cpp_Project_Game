@@ -22,6 +22,9 @@ void Game::makelevel()
    ofGame.view = new QGraphicsView(ofGame.scene);
    ofGame.go = new player();
    ofGame.goEnemy= new Enemy();
+   ofGame.spawnEnemy = new Enemy();
+
+   ofGame.spawnEnemy->setRect(0,0,100,100);
 
    ofGame.go = &ofGame.player;
   //ofGame.goEnemy = &ofGame.enemy;
@@ -35,5 +38,6 @@ void Game::makelevel()
 
    ofGame.go->makeobject(ofGame.scene); // doorverwijzing naar class player
    ofGame.goEnemy->makeobject(ofGame.scene);//doorverwijzing naar class enemy
+
 
 }

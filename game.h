@@ -6,6 +6,7 @@
 #include <QApplication>
 #include "player.h"
 #include "enemy.h"
+#include "movement.h"
 
 class Game : public QApplication{
 
@@ -30,7 +31,9 @@ public:
          QTimer * timer;
          object *go ;
          object *goEnemy;
+         Enemy *spawnEnemy;
          player player;
+
          bool testGame : 1;
          starting():scene(nullptr),go(nullptr),goEnemy(nullptr){}
      };
