@@ -11,8 +11,8 @@ Enemy::~Enemy()
 void Enemy::makeobject(QGraphicsScene *playerview)
 {
    //Enemy *enemy = new Enemy();
-  smaller.random_number = rand() % 700;
-  setPos(smaller.random_number,0);
+  elements.random_number = rand() % 700;
+  setPos(elements.random_number,0);
   setRect(0,0,100,100);
 
    playerview->addItem(this); // enemy is nu toegevoegd

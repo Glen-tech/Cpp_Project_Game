@@ -12,7 +12,7 @@ class movement: public QObject,  public QGraphicsRectItem{
 
 public:
     movement():bullet(nullptr),testMovement(0){}//default constructor
-
+    ~movement(){}
     bool testMovement;
     void keyPressEvent(QKeyEvent *event);
     object *bullet;

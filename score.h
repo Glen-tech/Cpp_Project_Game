@@ -1,11 +1,12 @@
 #ifndef SCORE_H
 #define SCORE_H
 
-#include "QGraphicsTextItem"
+#include <QGraphicsTextItem>
 
 class Score : public QGraphicsTextItem{
 public :
     Score();
+    ~Score(){}
 
     inline void increase();
     inline int getScore();  // voor heel kleine functies (met geen variabelen)

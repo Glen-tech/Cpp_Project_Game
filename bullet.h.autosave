@@ -1,0 +1,32 @@
+#ifndef BULLET_H
+#define BULLET_H
+
+#include "score.h"
+#include "object.h"
+#include "score.h"
+
+class Bullet : public object
+{
+Q_OBJECT
+
+public:
+    Bullet(){testBullet();}// verwijzing makeobject functie
+    ~Bullet(){}
+    void makeobject(QGraphicsScene *playerview);
+    Score point ; 
+    
+    bool testBullet()
+    {
+        
+        if(smaller.testBullet){qDebug() << "Bullet werkt";}
+        Bullet::makeobject(elements.playerview);
+        return true;
+    }
+
+public slots: // kan aan een signaal gekoppeld worden
+    void move();
+
+};
+
+
+#endif // BULLET_H
