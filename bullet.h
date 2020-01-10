@@ -10,6 +10,7 @@ Q_OBJECT
 
 public:
     Bullet(){testBullet();}// verwijzing makeobject functie
+    ~Bullet(){}
     void makeobject(QGraphicsScene *playerview);
 
     bool testBullet()
